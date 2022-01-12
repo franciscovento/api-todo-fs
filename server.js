@@ -1,10 +1,14 @@
 require('dotenv').config();
 // const dotenv = require('dotenv');
-
 const { dataBase } = require('./utils/database');
 const { app } = require('./app');
 
 // dotenv.config({path: './.env'});
+
+const { initModels } = require('./utils/initModels');
+
+// Model relations
+initModels();
 
 dataBase.sync()
 .then( ()=>{

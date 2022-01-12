@@ -12,8 +12,18 @@ const Todo = dataBase.define('todos', {
     allowNull: false,
   },
   content: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(255),
     allowNull: false,
+  },
+  userID:{
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 1,
+  },
+  status: {
+    type: DataTypes.STRING(15),
+    allowNull: false,
+    defaultValue: 'pending'
   },
 })
 
